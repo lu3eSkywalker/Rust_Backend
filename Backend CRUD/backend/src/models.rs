@@ -1,12 +1,8 @@
-use axum::{
-    routing::{get, post, put, delete},
-};
 use serde::{Deserialize, Serialize};
+use sqlx::FromRow;
 use uuid::Uuid;
 
-
-// User Model
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, FromRow)]
 pub struct User {
     pub id: Uuid,
     pub name: String,
